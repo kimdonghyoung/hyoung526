@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- hibernate의 기본이 되는 필수 파일로 hibernate를 사용하는 데 있어 여러 설정 정보들이 들어 간다.(XML, 데이터베이스 접속 정보 등) -->
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- 데이터베이스 접속 정보 -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/test</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1234</property>
+        <!-- 커넥션 풀 1개 -->
+        <property name="connection.pool_size">1</property>
+        <!-- Dialect 설정(데이터베이스마다 차이가 있음) -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- 세션팩토리로 부터 얻은 세션을 스레드 단위로 사용 -->
+        <property name="current_session_context_class">thread</property>
+        <!-- SQL 로그 사용여부 -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!-- 매핑 파일 등록 -->
+        <mapping resource="hibernate/hbm/board.xml"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mybatis의 기본이 되는 필수 파일로 mybatis를 사용하는데 있어 여러 설정 정보들이 들어 간다.
+     (매핑되는 모델, XML, 데이터베이스 접속 정보 등) -->
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases><!-- 모델을 연결해주는 별칭을 설정 -->
+        <typeAlias type="model.board.BoardModel" alias="BoardModel"/>
+    </typeAliases>
+    <environments default="development">
+		<environment id="development">
+		    <transactionManager type="JDBC"/> <!-- 트렌젝션 설정 -->
+		    <dataSource type="POOLED"> <!-- 데이터소스 설정 -->
+		        <property name="driver" value="com.mysql.jdbc.Driver"/>
+		        <property name="url" value="jdbc:mysql://127.0.0.1:3306/test"/>
+		        <property name="username" value="root"/>
+		        <property name="password" value="1234"/>
+		    </dataSource>
+		</environment>        
+    </environments>
+    <mappers> <!-- 사용되어지는 맵퍼 XML 파일을 추가 -->
+        <mapper resource="mybatis/sqlmap/board.xml"/>
+    </mappers>
+</configuration>

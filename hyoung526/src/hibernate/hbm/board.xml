@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- hibernate.xml 에서 매핑되어지는 파일로 BoardModel과 BOARD테이블 간 매핑 설정 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 모델 객체 패키지 -->
+<hibernate-mapping package="model.board">
+    <!-- 객체명과 테이블 연결 -->
+    <class name="BoardModel" table="BOARD">
+        <!-- PK ID 값 -->
+        <id name="num" column="NUM" type="int"/>
+        <property name="subject" column="SUBJECT" type="string"/>
+        <property name="writer" column="WRITER" type="string"/>
+        <property name="contents" column="CONTENTS" type="string"/>
+        <property name="ip" column="IP" type="string"/>
+        <property name="hit" column="HIT" type="int"/>
+        <property name="regDate" column="REG_DATE" type="string"/>
+        <property name="modDate" column="MOD_DATE" type="string"/>
+    </class>
+</hibernate-mapping>
