@@ -4,7 +4,7 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 네임스페이스 설정 -->
 <mapper namespace="board"> <!-- 이 값은 다른 매핑되는 xml과 동일하면 안된다. -->
-    <!-- 조건문 -->
+    <!-- 조건문 --> 
     <sql id="where">
         <where>
             <if test="searchText != ''">
